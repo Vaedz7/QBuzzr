@@ -147,6 +147,10 @@ body {
    cursor: pointer;
 }
 
+.speed-input{
+   accent-color: var(--blue);
+}
+
 .main {
    grid-column: span 7;
    background: linear-gradient(to top, rgb(22, 10, 47), rgb(40, 0, 119));
