@@ -68,8 +68,24 @@ body {
    transition: 0.2s;
 }
 
-.sidebar-btn:hover {
+.sidebar-btn:hover, .sidebar-btn-small:hover {
    opacity: 0.8;
+}
+
+.sidebar-btns-small{
+   display: flex;
+   flex-direction: column;
+   display: none;
+   transition: 0.2s;
+}
+
+.sidebar-btn-small{
+   background-color: var(--dark-purple);
+   border: none;
+   color: white;
+   border-radius: 10px;
+   height: 35px;
+   margin-bottom: 0.5rem;
 }
 
 .sidebar-btn p {
