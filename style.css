@@ -59,7 +59,6 @@ body {
 .sidebar-btn {
    display: flex;
    align-items: center;
-   justify-content: flex-start;
    color: white;
    border-radius: 10px;
    border: none;
@@ -103,6 +102,38 @@ body {
 
 #qbot-btn {
    background-color: var(--light-purple);
+}
+
+.settings{
+   background-color: var(--dark-purple);
+   color: white;
+   border-radius: 10px;
+}
+
+.settings-header{
+   background-color: var(--blue);
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.settings p, .settings svg{
+   padding-inline: 1rem;
+}
+
+.settings-header p{
+   font-weight: bold;
+}
+
+.settings svg{
+   width: 25px;
+   cursor: pointer;
+}
+
+.settings-main p{
+   padding-bottom: 1rem;
 }
 
 .main {
