@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <img id="logo" src="logo_large.svg">
+
+      <span id="ultra">ULTRA</span>
+
+      <div class="sidebar-btns">
+        <button class="sidebar-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-question-square-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.496 6.033a.237.237 0 0 1-.24-.247C5.35 4.091 6.737 3.5 8.005 3.5c1.396 0 2.672.73 2.672 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.105a.25.25 0 0 1-.25.25h-.81a.25.25 0 0 1-.25-.246l-.004-.217c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.803 0-1.253.478-1.342 1.134-.018.137-.128.25-.266.25h-.825zm2.325 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z"/>
+          </svg>
+          <p class="icon-label">Questions</p>
+        </button>
+
+        <button class="sidebar-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+          </svg>
+          <p class="icon-label">Multiplayer</p>
+        </button>
+
+        <button class="sidebar-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-database-fill" viewBox="0 0 16 16">
+            <path d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223Z"/>
+            <path d="M2 6.161V7c0 1.007.875 1.755 1.904 2.223C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777C13.125 8.755 14 8.007 14 7v-.839c-.457.432-1.004.751-1.49.972C11.278 7.693 9.682 8 8 8s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
+            <path d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
+            <path d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
+          </svg>
+          <p class="icon-label">Database</p>
+        </button>
+
+        <button id="qbot-btn" class="sidebar-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+            <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15"/>
+          </svg>
+          <p class="icon-label">QBot</p>
+        </button>
+
+        <button id="account-btn" class="sidebar-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+          </svg>
+          Steve Jobs
+        </button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="current-question">
+        <p class="question-name">Geography</p>
+        <p class="question-content">
+          This city is home to a UFO-shaped ice cream parlor called Coppelia, which was founded by a world leader. Nearly a million people are buried in this city's Colón Cemetery, including chess champion José Raúl Capablanca. The (#) Hershey Electric Railway connects this city to Matanzas. A constructivist building resembling a sword hilt contains this city's Russian embassy. A presidential palace-turned-museum in this city includes a glass enclosure protecting the yacht (*) Granma. This city's Morro Castle can be seen in the background of Watson and the Shark. Waterfront hotels in this city owned by Meyer Lansky hosted a 1946 meeting of Mafia leaders during a tourist-friendly period under Fulgencio Batista. For 10 points, José Martí International Airport serves what capital of Cuba?
+        </p>
+        <p class="question-answer">
+          Havana, Cuba [or La Habana]
+        </p>
+        </div>
+      <div class="past-questions">
+        <div class="past-question">USA</div>
+        <div class="past-question">Belarus</div>
+        <div class="past-question">India</div>
+        <div class="past-question">Texas</div>
+      </div>
+      <div class="toolbar">
+        <button class="toolbar-btn" id="settings-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+          </svg>
+        </button>
+        <input type="text" id="answer-field" placeholder="Enter answer">
+        <button class="toolbar-btn" id="buzz-btn">
+          Buzz
+        </button>
+        <button class="toolbar-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16">
+            <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
+          </svg>
+        </button>
+        <button class="toolbar-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 16 16">
+            <path d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
