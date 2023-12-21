@@ -119,7 +119,7 @@ body {
    align-items: center;
 }
 
-.settings p, .settings svg{
+.settings-header p, .settings svg, .settings-main div{
    padding-inline: 1rem;
 }
 
@@ -132,8 +132,19 @@ body {
    cursor: pointer;
 }
 
-.settings-main p{
-   padding-bottom: 1rem;
+.settings-main div{
+   padding-bottom: 0.5rem;
+   display: block;
+}
+
+.settings .tag{
+   padding: 5px;
+   background-color: var(--blue);
+   margin-bottom: 5px;
+   border-radius: 30px;
+   font-size: 15px;
+   display: inline-block;
+   cursor: pointer;
 }
 
 .main {
