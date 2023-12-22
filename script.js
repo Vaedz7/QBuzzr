@@ -8,6 +8,8 @@ const ultra = true
 
 if (ultra) {
     ultraLabel.style.content = "Ultra"
+} else {
+    ultraLabel.style.content = "none"
 }
     
 buzzBtn.addEventListener("click", function() {
