@@ -106,6 +106,8 @@ body {
 
 .sidebar-panel{
    grid-column: span 1;
+   box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.2);
+   background-color: var(--dark-purple);
 }
 
 .settings{
@@ -119,6 +121,8 @@ body {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   border-radius: 10px;
+   margin: 5px;
 }
 
 .settings-header p, .settings svg, .settings-main div{
