@@ -133,8 +133,14 @@ body {
 }
 
 .settings-main div{
-   padding-bottom: 0.5rem;
+   padding-block: 0.5rem;
    display: block;
+}
+
+.settings-main-header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
 
 .settings .tag{
