@@ -104,16 +104,18 @@ body {
    background-color: var(--light-purple);
 }
 
+.sidebar-panel{
+   grid-column: span 1;
+}
+
 .settings{
    background-color: var(--dark-purple);
    color: white;
-   border-radius: 10px;
+   height: 100%;
 }
 
 .settings-header{
    background-color: var(--blue);
-   border-top-right-radius: 10px;
-   border-top-left-radius: 10px;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -158,7 +160,7 @@ body {
 }
 
 .main {
-   grid-column: span 7;
+   grid-column: span 6;
    background: linear-gradient(to top, rgb(22, 10, 47), rgb(40, 0, 119));
    position: relative;
 }
