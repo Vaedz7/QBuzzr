@@ -3,6 +3,7 @@ var answerField = document.querySelector("#answer-field")
 var questionsBtn = document.querySelector("#questions_btn")
 var sidebarBtnsSmall = document.querySelector(".sidebar-btns-small")
 var ultraLabel = document.querySelector("#ultra")
+var questionAnswer = document.querySelector(".question-answer")
 
 const ultra = true
 
@@ -25,4 +26,24 @@ questionsBtn.addEventListener("click", function(){
         sidebarBtnsSmall.style.display = "none"
     }
 })
+
+
+
+var copyBtn = document.querySelector(".bi-copy")
+var wikipediaBtn = document.querySelector(".bi-wikipedia")
+var googleBtn = document.querySelector(".bi-google")
+
+//Need to remove the [], (), <>, 
+copyBtn.addEventListener("click", function(){
+    navigator.clipboard.writeText(questionAnswer.innerText)
+})
+
+wikipediaBtn.addEventListener("click", function(){
+    window.open(`https://wikipedia.org/w/index.php?search=${questionAnswer.innerText}`)
+})
+
+googleBtn.addEventListener("click", function(){
+    window.open(`https://www.google.com/search?q=${questionAnswer.innerText}`)
+});
+
 
