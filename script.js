@@ -29,21 +29,28 @@ questionsBtn.addEventListener("click", function(){
 
 
 
+//Action Buttons
 var copyBtn = document.querySelector(".bi-copy")
 var wikipediaBtn = document.querySelector(".bi-wikipedia")
 var googleBtn = document.querySelector(".bi-google")
 
-//Need to remove the [], (), <>, 
+function format(string){
+    string = string.replace(/\[.*?\]/g, '')
+    string = string.replace(/\(.*?\)/g, '')
+    string = string.replace(/<.*?>/g, '')
+    return string
+}
+
 copyBtn.addEventListener("click", function(){
-    navigator.clipboard.writeText(questionAnswer.innerText)
+    navigator.clipboard.writeText(format(questionAnswer.innerText))
 })
 
 wikipediaBtn.addEventListener("click", function(){
-    window.open(`https://wikipedia.org/w/index.php?search=${questionAnswer.innerText}`)
+    window.open(`https://wikipedia.org/w/index.php?search=${format(questionAnswer.innerText)}`)
 })
 
 googleBtn.addEventListener("click", function(){
-    window.open(`https://www.google.com/search?q=${questionAnswer.innerText}`)
+    window.open(`https://www.google.com/search?q=${format(questionAnswer.innerText)}`)
 });
 
 
