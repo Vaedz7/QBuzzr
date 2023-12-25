@@ -122,7 +122,6 @@ body {
    justify-content: space-between;
    align-items: center;
    border-radius: 10px;
-   margin: 5px;
 }
 
 .settings-header p, .settings svg, .settings-main div{

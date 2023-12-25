@@ -7,9 +7,9 @@ var ultraLabel = document.querySelector("#ultra")
 const ultra = true
 
 if (ultra) {
-    ultraLabel.style.content = "Ultra"
+    ultraLabel.textContent = "ULTRA";
 } else {
-    ultraLabel.style.content = "none"
+    ultraLabel.textContent = "BASIC";
 }
     
 buzzBtn.addEventListener("click", function() {
