@@ -16,11 +16,13 @@ buzzBtn.addEventListener("click", function() {
     answerField.style.display = "block"
 })
 
-questionsBtn.addEventListener("mouseover", function(){
-    sidebarBtnsSmall.style.display = "flex"
-})
-
-questionsBtn.addEventListener("mouseout", function(){
-    sidebarBtnsSmall.style.display = "none"
+var displayingTossupsAndBonuses = false
+questionsBtn.addEventListener("click", function(){
+    displayingTossupsAndBonuses = !displayingTossupsAndBonuses
+    if (displayingTossupsAndBonuses){
+        sidebarBtnsSmall.style.display = "flex"
+    } else {
+        sidebarBtnsSmall.style.display = "none"
+    }
 })
 
