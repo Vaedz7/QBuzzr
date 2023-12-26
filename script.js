@@ -1,4 +1,3 @@
-var buzzBtn = document.querySelector("#buzz-btn")
 var answerField = document.querySelector("#answer-field")
 var questionsBtn = document.querySelector("#questions_btn")
 var sidebarBtnsSmall = document.querySelector(".sidebar-btns-small")
@@ -12,10 +11,6 @@ if (ultra) {
 } else {
     ultraLabel.textContent = "BASIC"
 }
-    
-buzzBtn.addEventListener("click", function() {
-    answerField.style.display = "block"
-})
 
 var displayingTossupsAndBonuses = false
 questionsBtn.addEventListener("click", function(){
@@ -62,6 +57,9 @@ const minDelay = 100
 const maxDelay = 600
 const maxSpeed = 100
 let delay = maxDelay - ((maxDelay - minDelay) * (speedInput.value / maxSpeed))
+speedInput.addEventListener("change", function(){
+    delay = maxDelay - ((maxDelay - minDelay) * (speedInput.value / maxSpeed))
+})
 
 let questionContent = document.querySelector(".question-content")
 questionContent.innerText = ""
@@ -102,6 +100,11 @@ const forceNext = async () => {
 }
 
 //Toolbar Buttons
+var buzzBtn = document.querySelector("#buzz-btn")
+buzzBtn.addEventListener("click", function() {
+    answerField.style.display = "block"
+})
+
 startBtn = document.querySelector(".start-btn")
 startBtn.addEventListener("click", function(){
     if (stopped){
