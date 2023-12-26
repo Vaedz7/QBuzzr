@@ -4,8 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Libre%20Franklin:700|Libre%20Franklin:400');
+
+        body {
+          font-family: 'Libre Franklin';
+          font-weight: 400;
+        }
+
+        body{
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("https://images.unsplash.com/photo-1485134532658-d720895a3b5e?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+        }
+        .container{
+            display: grid;
+            width: 80%;
+            height: 40%;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .container div{
+            padding: 10px;
+            border-radius: 20px;
+            margin: 10px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(30px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+        }
+        .one{
+            grid-column: span 2;
+        }
+        .two{
+            grid-column: span 1;
+        }
+        .three{
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+        .four{
+            grid-column: span 1;
+        }
+        .five{
+            grid-column: span 2;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="one">
+            <h1>Advanced Categories</h1>
+            <p>Want to prioritize a certain category over others? It’s simple with our advanced categories. You can just change the percentages in one click.</p>
+        </div>
+        <div class="two">
+            <h1>Text To Speech</h1>
+            <p>Tired of reading? No worries. With built-in TTS functions, you can easily multitask, while playing QBuzzr. Enjoy countless varieties of voices that bring a truly realistic experience.</p>
+        </div>
+        <div class="three">
+            <h1>Multi Search</h1>
+            <p>Utilize a variety of sources, including our extensive question database and popular sites like Google and Wikipedia. Or leverage our AI's capabilities to instantly find the information you need most.</p>
+        </div>
+        <div class="four">
+            <h1>Super Customizable</h1>
+            <p>QBuzzr is built with users in mind. This means you can adjust almost anything to your own preference including: question sorting, keyboard shortcuts, and even themes.</p>
+        </div>
+        <div class="five">
+            <h1>Clue Highlighting</h1>
+            <p>Find clues easier with the power of latest AI and QBot. Learn efficiently and intelligently with automatic clue highlighting, to identify the most common or the most rare clues for every question.</p>
+        </div>
+    </div>
 </body>
 </html>
