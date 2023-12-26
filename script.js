@@ -100,7 +100,7 @@ const forceNext = async () => {
 }
 
 //Toolbar Buttons
-var buzzBtn = document.querySelector("#buzz-btn")
+var buzzBtn = document.querySelector(".buzz-btn")
 buzzBtn.addEventListener("click", function() {
     answerField.style.display = "block"
 })
