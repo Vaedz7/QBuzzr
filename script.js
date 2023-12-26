@@ -101,6 +101,24 @@ const forceNext = async () => {
   read()
 }
 
-read()
+//Toolbar Buttons
+startBtn = document.querySelector(".start-btn")
+startBtn.addEventListener("click", function(){
+    if (stopped){
+        stopped = false
+    } else{
+        read()
+    }
+})
+
+pauseBtn = document.querySelector(".pause-btn")
+pauseBtn.addEventListener("click", function(){
+    stopped = true
+})
+
+skipBtn = document.querySelector(".skip-btn")
+skipBtn.addEventListener("click", function(){
+
+})
 
 
