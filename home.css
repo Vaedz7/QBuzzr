@@ -46,8 +46,17 @@ body {
 
 main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+h1, h2{
+    color: white;
+}
+
+h2{
+    font-weight: 300;
 }
 
 .container{
@@ -67,6 +76,10 @@ main{
     backdrop-filter: blur(30px);
     border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+}
+
+.container div p{
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .one{
