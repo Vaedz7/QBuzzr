@@ -11,8 +11,8 @@ body {
   font-weight: 400;
   margin: 0;
   background: radial-gradient(darkblue, black);
-  width: 100vw;
-  height: 100vh;
+  width: auto;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
