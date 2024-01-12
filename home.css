@@ -103,6 +103,10 @@ h2{
     grid-column: span 2;
 }
 
+.one p{
+    width: 50%;
+}
+
 .two{
     grid-column: span 1;
 }
@@ -118,4 +122,8 @@ h2{
 
 .five{
     grid-column: span 2;
+}
+
+.five p{
+    width: 50%;
 }
