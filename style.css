@@ -61,7 +61,7 @@ body {
    display: flex;
    align-items: center;
    color: white;
-   border-radius: 10px;
+   border-radius: 15px;
    border: none;
    margin-block: 10px;
    width: 100%;
@@ -87,7 +87,6 @@ body {
    background-color: var(--dark-purple);
    border: none;
    color: white;
-   border-radius: 10px;
    height: 35px;
    margin-bottom: 0.5rem;
 }
@@ -122,7 +121,6 @@ body {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   border-radius: 10px;
 }
 
 .settings-header p, .settings svg, .settings-main div{
@@ -173,7 +171,7 @@ body {
    margin: 1.5rem;
    background: var(--dark-purple);
    color: white;
-   border-radius: 10px;
+   border-radius: 15px;
 }
 
 .current-question .question-name {
@@ -231,7 +229,7 @@ body {
    padding: 1rem;
    font-weight: bold;
    background: var(--blue);
-   border-radius: 10px;
+   border-radius: 15px;
    cursor: pointer;
    opacity: 0.5;
    transition: 0.2s;
@@ -254,7 +252,7 @@ body {
    color: white;
    border: none;
    background-color: var(--dark-purple);
-   border-radius: 10px;
+   border-radius: 15px;
    cursor: pointer;
    margin-right: 10px;
    transition: 0.2s;
@@ -266,7 +264,7 @@ body {
 #answer-field{
     height: 50px;
     color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     padding-left: 10px;
     background-color: var(--dark-purple);
     border: none;
