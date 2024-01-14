@@ -78,7 +78,7 @@ h2{
     font-weight: 300;
 }
 
-.container{
+.features-container{
     display: grid;
     width: 80%;
     height: 40%;
@@ -86,7 +86,7 @@ h2{
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.container div{
+.features-container div{
     padding: 15px;
     border-radius: 20px;
     margin: 10px;
@@ -97,7 +97,7 @@ h2{
     box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
 }
 
-.container div p{
+.features-container div p{
     color: rgba(255, 255, 255, 0.8);
 }
 
