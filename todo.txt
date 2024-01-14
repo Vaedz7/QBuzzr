@@ -1,0 +1,2 @@
+1) Convert and add script for play page
+2) Fix play page
