@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
    --dark-purple: rgb(22, 33, 112);
    --light-purple: rgb(84, 11, 230);
@@ -6,11 +8,9 @@
 
 html,
 body {
-   height: 100%;
-   width: 100%;
    margin: 0px;
    padding: 0px;
-   font-family: Arial;
+   font-family: 'Montserrat', sans-serif;
 }
 
 #logo {
@@ -74,6 +74,7 @@ body {
 
 .sidebar-btn:hover, .sidebar-btn-small:hover, .toolbar-btn:hover, .question-answer-action:hover  {
    opacity: 0.8;
+   border-radius: 20px;
 }
 
 .sidebar-btns-small{
@@ -86,9 +87,11 @@ body {
 .sidebar-btn-small{
    background-color: var(--dark-purple);
    border: none;
+   border-radius: 10px;
    color: white;
    height: 35px;
    margin-bottom: 0.5rem;
+   transition: 0.2s;
 }
 
 .sidebar-btn p {
