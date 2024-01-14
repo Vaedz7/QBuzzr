@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./Home.module.css";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
