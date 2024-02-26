@@ -79,6 +79,7 @@ export default function Home() {
               </NavigationMenuContent>
             </NavigationMenuItem>
           </NavigationMenuList>
+          <NavigationMenuItem>Account</NavigationMenuItem>
         </NavigationMenu>
 
         <DropdownMenu>
