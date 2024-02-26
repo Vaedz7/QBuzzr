@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 
-import { Button } from "@/components/ui/button"
+
 
 import {
   DropdownMenu,
@@ -33,6 +33,7 @@ export default function Home() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Play</NavigationMenuTrigger>
               <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                 <ListItem href="/#" title="Tossups">
                 Play tossups.
                 </ListItem>
@@ -42,11 +43,16 @@ export default function Home() {
                 <ListItem href="/#" title="Multiplayer">
                 Play with friends.
                 </ListItem>
+                </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
+              <NavigationMenuList>
+                <NavigationMenuItem>
               <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
               <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
@@ -60,12 +66,14 @@ export default function Home() {
                     </p>
                   </a>
                 </NavigationMenuLink>
+                </li>
                 <ListItem href="/#" title="Database">
                 Our questions database.
                 </ListItem>
                 <ListItem href="/#" title="Packet Tools">
                 Generate random packets or upload your own.
                 </ListItem>
+                </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
           </NavigationMenuList>
