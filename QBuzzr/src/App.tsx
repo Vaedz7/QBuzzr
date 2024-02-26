@@ -31,15 +31,41 @@ export default function Home() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Play</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <NavigationMenuLink>Link</NavigationMenuLink>
+                <ListItem href="/#" title="Tossups">
+                Play tossups.
+                </ListItem>
+                <ListItem href="/#" title="Bonuses">
+                Play bonuses.
+                </ListItem>
+                <ListItem href="/#" title="Multiplayer">
+                Play with friends.
+                </ListItem>
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <Button variant="outline">Button</Button>
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    href="/"
+                  >
+                    <div className="mb-2 mt-4 text-lg font-medium">
+                      QBot
+                    </div>
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      QBuzzr AI
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+                <ListItem href="/#" title="Database">
+                Our questions database.
+                </ListItem>
+                <ListItem href="/#" title="Packet Tools">
+                Generate random packets or upload your own.
+                </ListItem>
               </NavigationMenuContent>
             </NavigationMenuItem>
           </NavigationMenuList>
