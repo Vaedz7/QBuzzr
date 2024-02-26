@@ -46,7 +46,7 @@ export default function Home() {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-            <NavigationMenuItem>
+          </NavigationMenuList>
               <NavigationMenuList>
                 <NavigationMenuItem>
               <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
