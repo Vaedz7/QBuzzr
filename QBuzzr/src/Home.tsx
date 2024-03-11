@@ -19,7 +19,7 @@ export default function Home() {
           <h1 className="text-left text-2xl">QBuzzr is an all-in-one QuizBowl practice tool for people of all skill level. We aim to deliver the best practice experience by providing you the most hi tech and innovative features. We hope that our efforts will make your study process more productive and enjoyable.</h1>
         </div>
         <div>
-          <h1 className="w-100 text-8xl italic font-medium text-left w-1/2">Play.<br />Learn.<br />Enjoy.</h1>
+          <h1 className="text-8xl italic font-medium text-left w-1/2">Play.<br />Learn.<br />Enjoy.</h1>
         </div>
       </div>
       <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-4 mt-8'>
@@ -62,8 +62,3 @@ export default function Home() {
     </>
   )
 }
-
-<div className="flex justify-between">
-  <div className="bg-red-500 w-20 h-20"></div>
-  <div className="bg-blue-500 w-20 h-20"></div>
-</div>
