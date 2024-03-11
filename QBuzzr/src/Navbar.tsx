@@ -87,6 +87,9 @@ export default function Home() {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
+            <NavigationMenuItem>
+              <h1>🚨 Public release coming May 2024. 🚨</h1>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </ThemeProvider>
