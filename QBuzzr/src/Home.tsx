@@ -22,7 +22,7 @@ export default function Home() {
          <Navbar />
          <div className="flex flex-col items-center my-10 gap-4">
             <div>
-               <h1 className="text-8xl italic font-medium p-2 text-left w-full bg-gradient-to-r from-blue-600  to-purple-600 inline-block text-transparent bg-clip-text">
+               <h1 className="text-8xl italic font-medium p-2 text-left w-full text-primary">
                   Play. Learn. Enjoy.
                </h1>
             </div>
