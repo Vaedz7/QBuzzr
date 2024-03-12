@@ -41,6 +41,16 @@ interface Category {
 
 const categories: Category[] = [
    {
+      name: "History",
+      subcategories: [
+         "American History",
+         "Ancient History",
+         "European History",
+         "World History",
+         "Misc History",
+      ],
+   },
+   {
       name: "Literature",
       subcategories: [
          "American Literature",
@@ -48,7 +58,6 @@ const categories: Category[] = [
          "Classical Literature",
          "European Literature",
          "World Literature",
-         "Other Literature",
          "Drama",
          "Long Fiction",
          "Poetry",
@@ -57,22 +66,11 @@ const categories: Category[] = [
       ],
    },
    {
-      name: "History",
-      subcategories: [
-         "American History",
-         "Ancient History",
-         "European History",
-         "World History",
-         "Other History",
-      ],
-   },
-   {
       name: "Science",
       subcategories: [
          "Biology",
          "Chemistry",
          "Physics",
-         "Other Science",
          "Math",
          "Astronomy",
          "Computer Science",
@@ -84,18 +82,20 @@ const categories: Category[] = [
    {
       name: "Fine Arts",
       subcategories: [
-         "Visual Fine Arts",
-         "Auditory Fine Arts",
-         "Other Fine Arts",
          "Architecture",
+         "Auditory Fine Arts",
          "Dance",
          "Film",
          "Jazz",
          "Opera",
          "Photography",
+         "Visual Fine Arts",
          "Misc Arts",
       ],
    },
+   { name: "Religion" },
+   { name: "Mythology" },
+   { name: "Philosophy" },
    {
       name: "Social Studies",
       subcategories: [
@@ -104,12 +104,9 @@ const categories: Category[] = [
          "Linguistics",
          "Psychology",
          "Sociology",
-         "Other Social Science",
+         "Misc Social Science",
       ],
    },
-   { name: "Religion" },
-   { name: "Mythology" },
-   { name: "Philosophy" },
    { name: "Geography" },
    { name: "Current Events" },
    { name: "Trash" },
@@ -163,7 +160,7 @@ export default function SettingsPanel() {
                            </DropdownMenuSubTrigger>
                            <DropdownMenuSubContent>
                               {category.subcategories.map((subcategory) => (
-                                 <DropdownMenuCheckboxItem>
+                                 <DropdownMenuCheckboxItem checked={true}>
                                     {subcategory}
                                  </DropdownMenuCheckboxItem>
                               ))}
