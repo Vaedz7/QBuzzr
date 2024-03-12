@@ -4,7 +4,6 @@ import { Button } from "./components/ui/button";
 import {
    DropdownMenu,
    DropdownMenuContent,
-   DropdownMenuItem,
    DropdownMenuCheckboxItem,
    DropdownMenuLabel,
    DropdownMenuSeparator,
@@ -12,7 +11,6 @@ import {
    DropdownMenuSub,
    DropdownMenuSubContent,
    DropdownMenuSubTrigger,
-   DropdownMenuPortal,
 } from "@/components/ui/dropdown-menu";
 
 import { Separator } from "@/components/ui/separator";
