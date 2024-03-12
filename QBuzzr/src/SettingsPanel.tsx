@@ -32,24 +32,88 @@ import {
    PopoverTrigger,
 } from "@/components/ui/popover";
 
-type Category = {
-   name: string;
-   subcategories: string[];
-};
+import { Dumbbell, Blocks } from "lucide-react";
 
-const categories = [
-   "Literature",
-   "History",
-   "Science",
-   "Fine Arts",
-   "Religion",
-   "Mythology",
-   "Philosophy",
-   "Social Studies",
-   "Geography",
-   "Current Events",
-   "Trash",
-   "Other Academic",
+interface Category {
+   name: string;
+   subcategories?: string[]; // Optional subcategories property
+}
+
+const categories: Category[] = [
+   {
+      name: "Literature",
+      subcategories: [
+         "American Literature",
+         "British Literature",
+         "Classical Literature",
+         "European Literature",
+         "World Literature",
+         "Other Literature",
+         "Drama",
+         "Long Fiction",
+         "Poetry",
+         "Short Fiction",
+         "Misc Literature",
+      ],
+   },
+   {
+      name: "History",
+      subcategories: [
+         "American History",
+         "Ancient History",
+         "European History",
+         "World History",
+         "Other History",
+      ],
+   },
+   {
+      name: "Science",
+      subcategories: [
+         "Biology",
+         "Chemistry",
+         "Physics",
+         "Other Science",
+         "Math",
+         "Astronomy",
+         "Computer Science",
+         "Earth Science",
+         "Engineering",
+         "Misc Science",
+      ],
+   },
+   {
+      name: "Fine Arts",
+      subcategories: [
+         "Visual Fine Arts",
+         "Auditory Fine Arts",
+         "Other Fine Arts",
+         "Architecture",
+         "Dance",
+         "Film",
+         "Jazz",
+         "Opera",
+         "Photography",
+         "Misc Arts",
+      ],
+   },
+   {
+      name: "Social Studies",
+      subcategories: [
+         "Anthropology",
+         "Economics",
+         "Linguistics",
+         "Psychology",
+         "Sociology",
+         "Other Social Science",
+      ],
+   },
+   { name: "Religion" },
+   { name: "Mythology" },
+   { name: "Philosophy" },
+   { name: "Geography" },
+   { name: "Current Events" },
+   { name: "Trash" },
+   { name: "Other Academic" },
 ];
 
 const difficulties = [
@@ -78,16 +142,39 @@ export default function SettingsPanel() {
          <span className="flex flex-row justify-start gap-2">
             <DropdownMenu>
                <DropdownMenuTrigger>
-                  <Button variant="secondary">Categories</Button>
+                  <Button
+                     variant="secondary"
+                     className="justify-start text-left font-normal"
+                  >
+                     <Blocks className="2-4 h-4 mr-2" />
+                     Categories
+                  </Button>
                </DropdownMenuTrigger>
                <DropdownMenuContent>
                   <DropdownMenuLabel>Categories</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  {sortedcategories.map((subject) => (
-                     <DropdownMenuCheckboxItem key={subject} checked={true}>
-                        {subject}
-                     </DropdownMenuCheckboxItem>
-                  ))}
+                  {sortedcategories.map((category) =>
+                     category.subcategories ? (
+                        <DropdownMenuSub>
+                           <DropdownMenuSubTrigger>
+                              <DropdownMenuCheckboxItem checked={true}>
+                                 {category.name}
+                              </DropdownMenuCheckboxItem>
+                           </DropdownMenuSubTrigger>
+                           <DropdownMenuSubContent>
+                              {category.subcategories.map((subcategory) => (
+                                 <DropdownMenuCheckboxItem>
+                                    {subcategory}
+                                 </DropdownMenuCheckboxItem>
+                              ))}
+                           </DropdownMenuSubContent>
+                        </DropdownMenuSub>
+                     ) : (
+                        <DropdownMenuCheckboxItem checked={true}>
+                           {category.name}
+                        </DropdownMenuCheckboxItem>
+                     )
+                  )}
                   <DropdownMenuSeparator />
                   <DropdownMenuCheckboxItem checked={true}>
                      Select All
@@ -96,7 +183,13 @@ export default function SettingsPanel() {
             </DropdownMenu>
             <DropdownMenu>
                <DropdownMenuTrigger>
-                  <Button variant="secondary">Difficulties</Button>
+                  <Button
+                     variant="secondary"
+                     className="justify-start text-left font-normal"
+                  >
+                     <Dumbbell className="mr-2 h-4 w-4" />
+                     Difficulties
+                  </Button>
                </DropdownMenuTrigger>
                <DropdownMenuContent>
                   <DropdownMenuLabel>Difficulties</DropdownMenuLabel>
@@ -124,7 +217,11 @@ export default function SettingsPanel() {
                      )}
                   >
                      <CalendarIcon className="mr-2 h-4 w-4" />
-                     {startDate ? format(startDate, "PPP") : <span>Start date</span>}
+                     {startDate ? (
+                        format(startDate, "PPP")
+                     ) : (
+                        <span>Start date</span>
+                     )}
                   </Button>
                </PopoverTrigger>
                <PopoverContent className="w-auto p-0">
