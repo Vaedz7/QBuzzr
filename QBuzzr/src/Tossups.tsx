@@ -36,7 +36,7 @@ export default function Home() {
                   </span>
                </span>
             </ResizablePanel>
-            <ResizableHandle />
+            <ResizableHandle/>
             <ResizablePanel className="p-2">
                <div className="flex flex-col items-center">
                   <TossupCard

@@ -9,6 +9,13 @@ import {
    CardTitle,
 } from "@/components/ui/card";
 
+import {
+   Accordion,
+   AccordionContent,
+   AccordionItem,
+   AccordionTrigger,
+} from "@/components/ui/accordion";
+
 export default function Home() {
    return (
       <>
@@ -85,6 +92,115 @@ export default function Home() {
                </CardFooter>
             </Card>
          </div>
+         <h1 className="text-2xl mt-8">Upcoming Features</h1>
+         <Accordion type="single" collapsible>
+            {/* Content Management */}
+            <AccordionItem value="item-1">
+               <AccordionTrigger>Content Management</AccordionTrigger>
+               <AccordionContent className="text-left">
+                  <ul className="list-disc list-inside">
+                     <li>
+                        Custom Packet Upload: Import your own question packets
+                        for personalized practice.
+                     </li>
+                     <li>
+                        Preset Creation: Save and load custom game setups with
+                        settings and categories.
+                     </li>
+                  </ul>
+               </AccordionContent>
+            </AccordionItem>
+
+            {/* Automated Features */}
+            <AccordionItem value="item-2">
+               <AccordionTrigger>Automated Features</AccordionTrigger>
+               <AccordionContent className="text-left">
+                  <ul className="list-disc list-inside">
+                     <li>
+                        Smart Formatting: Automatic question formatting
+                        including power bolding.
+                     </li>
+                     <li>
+                        Text-to-Speech (TTS): Listen to questions read aloud for
+                        increased accessibility and study options.
+                     </li>
+                  </ul>
+               </AccordionContent>
+            </AccordionItem>
+
+            {/* Enhanced Question Analysis */}
+            <AccordionItem value="item-3">
+               <AccordionTrigger>Enhanced Question Analysis</AccordionTrigger>
+               <AccordionContent className="text-left">
+                  <ul className="list-disc list-inside">
+                     <li>
+                        Clue Highlighting: Identify key clues within questions
+                        for focused review.
+                     </li>
+                     <li>
+                        Similar Question Search: Discover questions with similar
+                        themes or concepts.
+                     </li>
+                  </ul>
+               </AccordionContent>
+            </AccordionItem>
+
+            {/* Advanced Customization */}
+            <AccordionItem value="item-4">
+               <AccordionTrigger>Advanced Customization</AccordionTrigger>
+               <AccordionContent className="text-left">
+                  <ul className="list-disc list-inside">
+                     <li>
+                        AI-Powered Categories: Create custom categories with AI
+                        suggestions, like "American Geography" or "European
+                        History".
+                     </li>
+                     <li>
+                        Category & Difficulty Breakdown: Analyze question
+                        distribution by category and difficulty for targeted
+                        practice.
+                     </li>
+                  </ul>
+               </AccordionContent>
+            </AccordionItem>
+
+            {/* Personalization */}
+            <AccordionItem value="item-5">
+               <AccordionTrigger>Personalization</AccordionTrigger>
+               <AccordionContent className="text-left">
+                  <ul className="list-disc list-inside">
+                     <li>
+                        Custom Themes: Personalize your study experience with a
+                        variety of user interface themes.
+                     </li>
+                     <li>
+                        Custom Account Perks: Set up custom profile images and
+                        nicks.
+                     </li>
+                  </ul>
+               </AccordionContent>
+            </AccordionItem>
+         </Accordion>
       </>
    );
 }
+
+// Save & Manage Content:
+// Preset Creation: Save and load custom game setups with settings and categories.
+// Custom Packet Upload: Import your own question packets for personalized practice.
+
+// Automated Features:
+// Smart Formatting: Automatic question formatting including power bolding.
+// Text-to-Speech (TTS): Listen to questions read aloud for increased accessibility and study options.
+
+// Enhanced Question Analysis:
+// Clue Highlighting: Identify key clues within questions for focused review.
+// Similar Question Search: Discover questions with similar themes or concepts.
+
+// Advanced Customization:
+// AI-Powered Categories: Create custom categories with AI suggestions, like "American Geography" or "European History".
+// Category & Difficulty Breakdown: Adjust question distribution by category and difficulty for targeted practice.
+
+// Personalization:
+// Custom Themes: Personalize your study experience with a variety of user interface themes.
+// Custom Account Perks: Set up custom profile images and nicks.

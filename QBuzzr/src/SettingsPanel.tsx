@@ -17,7 +17,12 @@ import {
 
 import { Separator } from "@/components/ui/separator";
 
-const subjects = [
+type Category = {
+    name: string,
+    subcategories: string[]
+}
+
+const categories = [
    "Literature",
    "History",
    "Science",
@@ -45,7 +50,7 @@ const difficulties = [
     "Open"
   ];
 
-const sortedSubjects = subjects.sort(); // Sorts the array alphabetically
+const sortedcategories = categories.sort(); // Sorts the array alphabetically
 
 export default function SettingsPanel() {
    return (
@@ -60,7 +65,7 @@ export default function SettingsPanel() {
                <DropdownMenuContent>
                   <DropdownMenuLabel>Categories</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  {sortedSubjects.map((subject) => (
+                  {sortedcategories.map((subject) => (
                      <DropdownMenuCheckboxItem key={subject} checked={true}>
                         {subject}
                      </DropdownMenuCheckboxItem>
