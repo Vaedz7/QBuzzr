@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Button } from "./components/ui/button";
 
 import {
@@ -16,11 +16,26 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { Separator } from "@/components/ui/separator";
+import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
+
+import { Switch } from "@/components/ui/switch";
+
+import { format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { Calendar } from "@/components/ui/calendar";
+import {
+   Popover,
+   PopoverContent,
+   PopoverTrigger,
+} from "@/components/ui/popover";
 
 type Category = {
-    name: string,
-    subcategories: string[]
-}
+   name: string;
+   subcategories: string[];
+};
 
 const categories = [
    "Literature",
@@ -38,21 +53,24 @@ const categories = [
 ];
 
 const difficulties = [
-    "MS",
-    "Easy HS",
-    "Regular HS",
-    "Hard HS",
-    "National HS",
-    "Easy COLL",
-    "Reg COLL",
-    "Hard COLL",
-    "National COLL",
-    "Open"
-  ];
+   "MS",
+   "Easy HS",
+   "Regular HS",
+   "Hard HS",
+   "National HS",
+   "Easy COLL",
+   "Reg COLL",
+   "Hard COLL",
+   "National COLL",
+   "Open",
+];
 
 const sortedcategories = categories.sort(); // Sorts the array alphabetically
 
 export default function SettingsPanel() {
+   const [startDate, setStartDate] = React.useState<Date>();
+   const [endDate, setEndDate] = React.useState<Date>();
+
    return (
       <>
          <h1 className="font-bold">Settings</h1>
@@ -70,9 +88,9 @@ export default function SettingsPanel() {
                         {subject}
                      </DropdownMenuCheckboxItem>
                   ))}
-                  <DropdownMenuSeparator/>
+                  <DropdownMenuSeparator />
                   <DropdownMenuCheckboxItem checked={true}>
-                    Select All
+                     Select All
                   </DropdownMenuCheckboxItem>
                </DropdownMenuContent>
             </DropdownMenu>
@@ -83,17 +101,77 @@ export default function SettingsPanel() {
                <DropdownMenuContent>
                   <DropdownMenuLabel>Difficulties</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                {difficulties.map((difficulty) => (
-                    <DropdownMenuCheckboxItem key={difficulty} checked={true}>
+                  {difficulties.map((difficulty) => (
+                     <DropdownMenuCheckboxItem key={difficulty} checked={true}>
                         {difficulty}
-                    </DropdownMenuCheckboxItem>
-                ))}
+                     </DropdownMenuCheckboxItem>
+                  ))}
                   <DropdownMenuSeparator />
                   <DropdownMenuCheckboxItem checked={true}>
                      Select All
                   </DropdownMenuCheckboxItem>
                </DropdownMenuContent>
             </DropdownMenu>
+         </span>
+         <span className="flex flex-row gap-2 items-center justify-center">
+            <Popover>
+               <PopoverTrigger asChild>
+                  <Button
+                     variant={"outline"}
+                     className={cn(
+                        "justify-start text-left font-normal",
+                        !startDate && "text-muted-foreground"
+                     )}
+                  >
+                     <CalendarIcon className="mr-2 h-4 w-4" />
+                     {startDate ? format(startDate, "PPP") : <span>Start date</span>}
+                  </Button>
+               </PopoverTrigger>
+               <PopoverContent className="w-auto p-0">
+                  <Calendar
+                     mode="single"
+                     selected={startDate}
+                     onSelect={setStartDate}
+                     initialFocus
+                  />
+               </PopoverContent>
+            </Popover>
+            <Popover>
+               <PopoverTrigger asChild>
+                  <Button
+                     variant={"outline"}
+                     className={cn(
+                        "justify-start text-left font-normal",
+                        !endDate && "text-muted-foreground"
+                     )}
+                  >
+                     <CalendarIcon className="mr-2 h-4 w-4" />
+                     {endDate ? format(endDate, "PPP") : <span>End date</span>}
+                  </Button>
+               </PopoverTrigger>
+               <PopoverContent className="w-auto p-0">
+                  <Calendar
+                     mode="single"
+                     selected={endDate}
+                     onSelect={setEndDate}
+                     initialFocus
+                  />
+               </PopoverContent>
+            </Popover>
+         </span>
+         <span className="flex flex-col gap-2">
+            <span className="flex items-center gap-2">
+               <Switch id="powermarked_only"></Switch>
+               <Label htmlFor="powermarked_only">Powermarked only</Label>
+            </span>
+            <span className="flex items-center gap-2">
+               <Switch id="rebuzzers"></Switch>
+               <Label htmlFor="rebuzzers">Rebuzzers</Label>
+            </span>
+            <span className="flex items-center gap-2">
+               <Label htmlFor="speed">Speed:</Label>
+               <Slider defaultValue={[0]} max={100} step={1} id="speed" />
+            </span>
          </span>
       </>
    );

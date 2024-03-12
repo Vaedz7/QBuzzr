@@ -10,10 +10,6 @@ import {
    ResizablePanelGroup,
 } from "@/components/ui/resizable";
 
-import { Label } from "@/components/ui/label";
-
-import { Switch } from "@/components/ui/switch";
-
 import EnterActions from "./EnterActions";
 
 import SettingsPanel from "./SettingsPanel";
@@ -25,16 +21,6 @@ export default function Home() {
          <ResizablePanelGroup direction="horizontal" className="mt-4">
             <ResizablePanel className="flex flex-col gap-2 p-2 items-center">
                <SettingsPanel/>
-               <span className="flex flex-col gap-2">
-                  <span className="flex items-center gap-2">
-                     <Switch id="powermarked_only"></Switch>
-                     <Label htmlFor="powermarked_only">Powermarked only</Label>
-                  </span>
-                  <span className="flex items-center gap-2">
-                     <Switch id="rebuzzers"></Switch>
-                     <Label htmlFor="rebuzzers">Rebuzzers</Label>
-                  </span>
-               </span>
             </ResizablePanel>
             <ResizableHandle/>
             <ResizablePanel className="p-2">
