@@ -21,6 +21,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-toast": "^1.1.5",
+    "@types/react-typing-animation": "^1.6.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "date-fns": "^3.4.0",
@@ -34,6 +35,7 @@
     "react-router-dom": "^6.22.3",
     "sonner": "^1.4.3",
     "tailwind-merge": "^2.2.1",
+    "tailwind-typewriter": "^1.0.1",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {

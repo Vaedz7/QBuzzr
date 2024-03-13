@@ -94,5 +94,16 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('tailwind-typewriter')({
+      wordsets: {
+          slogan: {
+              words: ['grinding', 'learning', 'studying', 'drilling', 'mastering'],
+              delay: 1,
+              writeSpeed: 0.2,
+          }
+      }
+  })
+  ],
 }

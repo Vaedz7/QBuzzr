@@ -21,9 +21,11 @@ export default function Home() {
       <>
          <Navbar />
          <div className="flex flex-col items-center my-10 gap-4">
-            <div>
-               <h1 className="text-8xl italic font-medium p-2 text-left w-full text-primary">
-                  Play. Learn. Enjoy.
+            <div className="flex flex-row">
+               <h1 className="text-5xl italic font-medium p-2 text-left w-full">
+                  All-in-one tool for
+                  <span className="type-slogan text-5xl italic font-medium p-2 text-left w-full text-primary"></span>
+                  QuizBowl.
                </h1>
             </div>
             <div className="text-left w-full">

@@ -13,22 +13,14 @@ import {
    DropdownMenuSubTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import {DateRangePicker} from "./components/DateRangePicker"
+
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
 
 import { Switch } from "@/components/ui/switch";
 
-import { format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { Calendar } from "@/components/ui/calendar";
-import {
-   Popover,
-   PopoverContent,
-   PopoverTrigger,
-} from "@/components/ui/popover";
 
 import { Dumbbell, Blocks } from "lucide-react";
 
@@ -202,54 +194,7 @@ export default function SettingsPanel() {
             </DropdownMenu>
          </span>
          <span className="flex flex-row gap-2 items-center justify-center">
-            <Popover>
-               <PopoverTrigger asChild>
-                  <Button
-                     variant={"outline"}
-                     className={cn(
-                        "justify-start text-left font-normal",
-                        !startDate && "text-muted-foreground"
-                     )}
-                  >
-                     <CalendarIcon className="mr-2 h-4 w-4" />
-                     {startDate ? (
-                        format(startDate, "PPP")
-                     ) : (
-                        <span>Start date</span>
-                     )}
-                  </Button>
-               </PopoverTrigger>
-               <PopoverContent className="w-auto p-0">
-                  <Calendar
-                     mode="single"
-                     selected={startDate}
-                     onSelect={setStartDate}
-                     initialFocus
-                  />
-               </PopoverContent>
-            </Popover>
-            <Popover>
-               <PopoverTrigger asChild>
-                  <Button
-                     variant={"outline"}
-                     className={cn(
-                        "justify-start text-left font-normal",
-                        !endDate && "text-muted-foreground"
-                     )}
-                  >
-                     <CalendarIcon className="mr-2 h-4 w-4" />
-                     {endDate ? format(endDate, "PPP") : <span>End date</span>}
-                  </Button>
-               </PopoverTrigger>
-               <PopoverContent className="w-auto p-0">
-                  <Calendar
-                     mode="single"
-                     selected={endDate}
-                     onSelect={setEndDate}
-                     initialFocus
-                  />
-               </PopoverContent>
-            </Popover>
+            <DateRangePicker/>
          </span>
          <span className="flex flex-col gap-2">
             <span className="flex items-center gap-2">
