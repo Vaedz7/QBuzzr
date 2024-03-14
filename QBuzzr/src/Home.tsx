@@ -16,6 +16,8 @@ import {
    AccordionTrigger,
 } from "@/components/ui/accordion";
 
+import { Typewriter } from 'react-simple-typewriter'
+
 export default function Home() {
    return (
       <>
@@ -23,9 +25,9 @@ export default function Home() {
          <div className="flex flex-col items-center my-10 gap-4">
             <div className="flex flex-row">
                <h1 className="text-5xl italic font-medium p-2 text-left w-full">
-                  All-in-one tool for
-                  <span className="type-slogan text-5xl italic font-medium p-2 text-left w-full text-primary"></span>
-                  QuizBowl.
+                  All-in-one tool for&nbsp; 
+                  <span className="text-5xl italic font-medium p-2 text-left w-full text-primary"><Typewriter words = {['grinding', 'learning', 'studying', 'drilling', 'mastering', 'training', 'understanding', 'discovering', 'practicing']} loop={false} /></span>
+                  &nbsp;QuizBowl.
                </h1>
             </div>
             <div className="text-left w-full">
