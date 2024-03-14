@@ -3,6 +3,8 @@ import "./App.css";
 // import * as React from "react"
 import { Button } from "@/components/ui/button";
 
+import QuestionReader from "./Reader";
+
 import {
    Clipboard,
    Star,
@@ -29,6 +31,7 @@ import {
 
 import { Toaster } from "@/components/ui/sonner"
 import { toast } from "sonner"
+import React from "react";
 
 export default function TossupCard(props: {
    text: string;
@@ -51,11 +54,13 @@ export default function TossupCard(props: {
     toast("Copied to clipboard")
    }
 
+   const [shouldRead, setShouldRead] = React.useState(false);
+
    return (
       <>
          <div className="text-left p-4 rounded-md border-2">
             <h1 className="border-b-2 pb-2 mb-4 font-bold">{category}</h1>
-            <p className="mb-4">{text}</p>
+            <p className="mb-4"><QuestionReader delay={200} shouldRead={shouldRead} text={text} /></p>
             <div className="flex flex-row items-center justify-between">
                <p>{answer}</p>
                <div className="flex gap-2">
@@ -63,7 +68,7 @@ export default function TossupCard(props: {
                      variant="outline"
                      size="icon"
                      onClick={() =>
-                        copyToClipboard()
+                        setShouldRead(!shouldRead)
                      }
                   >
                      <Clipboard className="h-4 w-4"/>
