@@ -87,7 +87,7 @@ const categories: Category[] = [
    { name: "Mythology" },
    { name: "Philosophy" },
    {
-      name: "Social Studies",
+      name: "Social Studies"/*,
       subcategories: [
          "Anthropology",
          "Economics",
@@ -96,6 +96,7 @@ const categories: Category[] = [
          "Sociology",
          "Misc Social Science",
       ],
+      */
    },
    { name: "Geography" },
    { name: "Current Events" },
@@ -126,14 +127,13 @@ export default function SettingsPanel() {
       <>
          <h1 className="font-bold">Settings</h1>
          <Separator />
-         <span className="flex flex-row justify-start gap-2">
-            <DropdownMenu>
-               <DropdownMenuTrigger>
+            <DropdownMenu >
+               <DropdownMenuTrigger className="w-full">
                   <Button
-                     variant="secondary"
-                     className="justify-start text-left font-normal"
+                     variant="outline"
+                     className="justify-start text-left font-normal w-full"
                   >
-                     <Blocks className="2-4 h-4 mr-2" />
+                     <Blocks className="w-4 h-4 mr-2" />
                      Categories
                   </Button>
                </DropdownMenuTrigger>
@@ -169,10 +169,10 @@ export default function SettingsPanel() {
                </DropdownMenuContent>
             </DropdownMenu>
             <DropdownMenu>
-               <DropdownMenuTrigger>
+               <DropdownMenuTrigger className="w-full">
                   <Button
-                     variant="secondary"
-                     className="justify-start text-left font-normal"
+                     variant="outline"
+                     className="justify-start text-left font-normal w-full"
                   >
                      <Dumbbell className="mr-2 h-4 w-4" />
                      Difficulties
@@ -192,12 +192,17 @@ export default function SettingsPanel() {
                   </DropdownMenuCheckboxItem>
                </DropdownMenuContent>
             </DropdownMenu>
-         </span>
-         <span className="flex flex-row gap-2 items-center justify-center">
+            <Separator className="w-full"/>
+         <span className="flex flex-col gap-2 w-full justify-start">
+         <span className="flex flex-col gap-2 justify-start text-left">
             <Label htmlFor="date_range_picker">Date range: </Label>
             <DateRangePicker id="date_range_picker"/>
          </span>
-         <span className="flex flex-col gap-2">
+         <span className="flex flex-col gap-4 my-1 justify-start text-left">
+               <Label htmlFor="speed">Speed:</Label>
+               <Slider defaultValue={[0]} max={100} step={1} id="speed" />
+            </span>
+            <Separator className="w-full"/>
             <span className="flex items-center gap-2">
                <Switch id="powermarked_only"></Switch>
                <Label htmlFor="powermarked_only">Powermarked only</Label>
@@ -205,10 +210,6 @@ export default function SettingsPanel() {
             <span className="flex items-center gap-2">
                <Switch id="rebuzzers"></Switch>
                <Label htmlFor="rebuzzers">Rebuzzers</Label>
-            </span>
-            <span className="flex items-center gap-2">
-               <Label htmlFor="speed">Speed:</Label>
-               <Slider defaultValue={[0]} max={100} step={1} id="speed" />
             </span>
          </span>
       </>
