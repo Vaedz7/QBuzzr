@@ -46,6 +46,7 @@ export default function TossupCard(props: {
       string = string.replace(/\[.*?\]/g, "");
       string = string.replace(/\(.*?\)/g, "");
       string = string.replace(/<.*?>/g, "");
+      string = string.replace("ANSWER: ", "");
       return string;
    }
 
