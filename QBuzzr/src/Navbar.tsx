@@ -92,10 +92,10 @@ export default function Home() {
                         <ListItem href="/tossups" title="Tossups">
                            Grind tossups.
                         </ListItem>
-                        <ListItem href="/#" title="Bonuses">
+                        <ListItem href="/bonuses" title="Bonuses">
                            Drill bonuses.
                         </ListItem>
-                        <ListItem href="/#" title="Multiplayer">
+                        <ListItem href="/multiplayer" title="Multiplayer">
                            Play with friends.
                         </ListItem>
                      </ul>
@@ -132,13 +132,13 @@ export default function Home() {
                            {" "}
                            {/* Wrap these items in a separate ul */}
                            <NavigationMenuItem>
-                              <ListItem href="/#" title="Database">
+                              <ListItem href="/database" title="Database">
                                  Search anything.
                               </ListItem>
-                              <ListItem href="/#" title="Packet Tools">
-                                 Train with exclusive and custom packets.
+                              <ListItem href="/packet-tools" title="Packet Tools">
+                                 Train with exclusive or custom packets.
                               </ListItem>
-                              <ListItem href="/#" title="Guides">
+                              <ListItem href="/guides" title="Guides">
                                  Master any subject step-by-step.
                               </ListItem>
                            </NavigationMenuItem>
@@ -152,7 +152,7 @@ export default function Home() {
                   <NavigationMenuTrigger>Hugh Jass</NavigationMenuTrigger>
                   <NavigationMenuContent>
                      <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
-                        <ListItem href="/#" title="View Account">
+                        <ListItem href="/account" title="View Account">
                            Edit your profile and check you game stats.
                         </ListItem>
                         <Separator />

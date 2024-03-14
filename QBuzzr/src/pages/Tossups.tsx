@@ -1,8 +1,8 @@
 "use client";
-import "./App.css";
+import "../App.css";
 // import * as React from "react"
-import Navbar from "./Navbar";
-import TossupCard from "./TossupCard";
+import Navbar from "../Navbar";
+import TossupCard from "../TossupCard";
 
 import {
    ResizableHandle,
@@ -10,9 +10,9 @@ import {
    ResizablePanelGroup,
 } from "@/components/ui/resizable";
 
-import EnterActions from "./EnterActions";
+import EnterActions from "../EnterActions";
 
-import SettingsPanel from "./SettingsPanel";
+import SettingsPanel from "../SettingsPanel";
 
 export default function Home() {
    return (
