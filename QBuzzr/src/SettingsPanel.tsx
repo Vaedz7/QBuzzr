@@ -194,7 +194,8 @@ export default function SettingsPanel() {
             </DropdownMenu>
          </span>
          <span className="flex flex-row gap-2 items-center justify-center">
-            <DateRangePicker/>
+            <Label htmlFor="date_range_picker">Date range: </Label>
+            <DateRangePicker id="date_range_picker"/>
          </span>
          <span className="flex flex-col gap-2">
             <span className="flex items-center gap-2">
