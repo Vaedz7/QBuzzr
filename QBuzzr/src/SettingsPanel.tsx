@@ -125,9 +125,11 @@ export default function SettingsPanel() {
 
    return (
       <>
-         <h1 className="font-bold">Settings</h1>
-         <Separator />
-            <DropdownMenu >
+      <div className="text-left rounded-md border-2 p-4">
+      <h1 className="font-bold">Settings</h1>
+         <Separator className="my-2"/>
+         <div className="flex gap-2">
+         <DropdownMenu >
                <DropdownMenuTrigger className="w-full">
                   <Button
                      variant="outline"
@@ -192,7 +194,8 @@ export default function SettingsPanel() {
                   </DropdownMenuCheckboxItem>
                </DropdownMenuContent>
             </DropdownMenu>
-            <Separator className="w-full"/>
+         </div>
+            <Separator className="w-full my-2"/>
          <span className="flex flex-col gap-2 w-full justify-start">
          <span className="flex flex-col gap-2 justify-start text-left">
             <Label htmlFor="date_range_picker">Date range: </Label>
@@ -212,6 +215,7 @@ export default function SettingsPanel() {
                <Label htmlFor="rebuzzers">Rebuzzers</Label>
             </span>
          </span>
+      </div>
       </>
    );
 }
