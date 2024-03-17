@@ -103,7 +103,7 @@ export default function TossupCard(props: {
 
   return (
     <>
-      <div className="text-left p-4 rounded-md border-2">
+      <div className="text-left p-4 rounded-md border-2 w-full">
         <h1 className="border-b-2 pb-2 mb-4 font-bold">{category}</h1>
         <p className="mb-4">
           <div className="prose">{currentText}</div>

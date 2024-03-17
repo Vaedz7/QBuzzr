@@ -41,7 +41,7 @@ export default function Home() {
       <NavigationMenu>
         <a href="/">
           <svg
-            className="w-32 mr-4 md:block sm:hidden"
+            className="w-32 mr-4"
             viewBox="0 0 5292 1242"
             xmlns="http://www.w3.org/2000/svg"
             xmlSpace="preserve"
