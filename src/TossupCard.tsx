@@ -3,6 +3,7 @@ import "./App.css";
 // import * as React from "react"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import * as fuzz from "fuzzball"
 
 //import QuestionReader from "./TossupReader";
 
@@ -61,6 +62,7 @@ export default function TossupCard(props: {
    const timeoutId = useRef<NodeJS.Timeout | null>(null);
    const [inputShowing, setInputShowing] = useState(false);
    const [actionsShowing, setActionsShowing] = useState(false);
+   const [inputValue, setInputValue] = useState("");
 
    const readWord = () => {
       setCurrentText(words.slice(0, index.current + 1).join(" "));
@@ -213,6 +215,7 @@ export default function TossupCard(props: {
             <Input
                placeholder="Enter answer"
                className={"w-full " + (inputShowing ? "block" : "hidden")}
+               onChange={e => setInputValue(e.currentTarget.value)}
             />
             <div className="flex flex-row gap-2">
                <Button
@@ -226,6 +229,7 @@ export default function TossupCard(props: {
                         setInputShowing(!inputShowing);
                      } else if (inputShowing) {
                         setInputShowing(!inputShowing);
+                        console.log(fuzz.ratio(answer, inputValue))
                         toggleReading();
                      }
                   }}
