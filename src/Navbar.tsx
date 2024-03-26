@@ -165,16 +165,6 @@ export default function Home() {
                   <SignedIn>
                      <UserButton/>
                   </SignedIn>
-                  <NavigationMenuTrigger>Hugh Jass</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                     <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
-                        <ListItem href="/account" title="View Account">
-                           Edit your profile and check you game stats.
-                        </ListItem>
-                        <Separator />
-                        <ListItem href="/#" title="Sign Out"></ListItem>
-                     </ul>
-                  </NavigationMenuContent>
                </NavigationMenuItem>
 
                <NavigationMenuItem>
