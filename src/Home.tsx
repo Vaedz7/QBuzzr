@@ -16,8 +16,6 @@ import {
    AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
-
 import { setCookie, getCookie, deleteCookie } from "./other/cookie-tools";
 
 import { Typewriter } from "react-simple-typewriter";
@@ -26,14 +24,6 @@ import React, { useState, useEffect } from "react";
 export default function Home() {
    return (
       <>
-         <header>
-            <SignedOut>
-               <SignInButton />
-            </SignedOut>
-            <SignedIn>
-               <UserButton />
-            </SignedIn>
-         </header>
          <Navbar />
          <div className="flex flex-col items-center my-10 gap-4">
             <div className="flex flex-row">
