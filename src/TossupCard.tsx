@@ -3,7 +3,8 @@ import "./App.css";
 // import * as React from "react"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import * as fuzz from "fuzzball"
+import * as fuzz from "fuzzball";
+import { setCookie, getCookie, deleteCookie } from "./other/cookie-tools";
 
 //import QuestionReader from "./TossupReader";
 
@@ -63,6 +64,7 @@ export default function TossupCard(props: {
    const [inputShowing, setInputShowing] = useState(false);
    const [actionsShowing, setActionsShowing] = useState(false);
    const [inputValue, setInputValue] = useState("");
+   const [showAnswer, setShowAnswer] = useState(false);
 
    const readWord = () => {
       setCurrentText(words.slice(0, index.current + 1).join(" "));
@@ -121,9 +123,9 @@ export default function TossupCard(props: {
                      <Info className="w-4 h-4" />
                   </HoverCardTrigger>
                   <HoverCardContent>
-                    {/* Set Info Goes Here/Need to add an appropriate variable later */}
-                    <h1 className="font-bold">2020 RAFT</h1>
-                    <h1>Packet 8 | Question 4</h1>
+                     {/* Set Info Goes Here/Need to add an appropriate variable later */}
+                     <h1 className="font-bold">2020 RAFT</h1>
+                     <h1>Packet 8 | Question 4</h1>
                   </HoverCardContent>
                </HoverCard>
             </div>
@@ -215,7 +217,7 @@ export default function TossupCard(props: {
             <Input
                placeholder="Enter answer"
                className={"w-full " + (inputShowing ? "block" : "hidden")}
-               onChange={e => setInputValue(e.currentTarget.value)}
+               onChange={(e) => setInputValue(e.currentTarget.value)}
             />
             <div className="flex flex-row gap-2">
                <Button
@@ -228,8 +230,11 @@ export default function TossupCard(props: {
                         toggleReading();
                         setInputShowing(!inputShowing);
                      } else if (inputShowing) {
+                        if (fuzz.ratio(answer, inputValue) > 30){
+                           setCookie("score", "10")
+                        }
                         setInputShowing(!inputShowing);
-                        console.log(fuzz.ratio(answer, inputValue))
+                        console.log(fuzz.ratio(answer, inputValue));
                         toggleReading();
                      }
                   }}

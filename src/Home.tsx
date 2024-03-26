@@ -16,17 +16,45 @@ import {
    AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { Typewriter } from 'react-simple-typewriter'
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+
+import { setCookie, getCookie, deleteCookie } from "./other/cookie-tools";
+
+import { Typewriter } from "react-simple-typewriter";
+import React, { useState, useEffect } from "react";
 
 export default function Home() {
    return (
       <>
+         <header>
+            <SignedOut>
+               <SignInButton />
+            </SignedOut>
+            <SignedIn>
+               <UserButton />
+            </SignedIn>
+         </header>
          <Navbar />
          <div className="flex flex-col items-center my-10 gap-4">
             <div className="flex flex-row">
                <h1 className="text-5xl italic font-medium p-2 text-left w-full">
-                  All-in-one tool for&nbsp; 
-                  <span className="text-5xl italic font-medium p-2 text-left w-full text-primary"><Typewriter words = {['grinding', 'learning', 'studying', 'drilling', 'mastering', 'training', 'understanding', 'discovering', 'practicing']} loop={false} /></span>
+                  All-in-one tool for&nbsp;
+                  <span className="text-5xl italic font-medium p-2 text-left w-full text-primary">
+                     <Typewriter
+                        words={[
+                           "grinding",
+                           "learning",
+                           "studying",
+                           "drilling",
+                           "mastering",
+                           "training",
+                           "understanding",
+                           "discovering",
+                           "practicing",
+                        ]}
+                        loop={false}
+                     />
+                  </span>
                   &nbsp;QuizBowl.
                </h1>
             </div>
