@@ -159,13 +159,13 @@ export default function Home() {
 
                {/* Hugh Jass Menu */}
                <NavigationMenuItem>
-                  {<SignedOut>
+                  <SignedOut>
                      <SignInButton />
                   </SignedOut>
                   <SignedIn>
                      <UserButton/>
-                  </SignedIn>}
-                  {<NavigationMenuTrigger>Hugh Jass</NavigationMenuTrigger>
+                  </SignedIn>
+                  <NavigationMenuTrigger>Hugh Jass</NavigationMenuTrigger>
                   <NavigationMenuContent>
                      <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
                         <ListItem href="/account" title="View Account">
@@ -174,7 +174,7 @@ export default function Home() {
                         <Separator />
                         <ListItem href="/#" title="Sign Out"></ListItem>
                      </ul>
-                  </NavigationMenuContent>}
+                  </NavigationMenuContent>
                </NavigationMenuItem>
 
                <NavigationMenuItem>
