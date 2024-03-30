@@ -1,4 +1,6 @@
 import * as React from "react";
+import {useState, useEffect} from "react"
+import {getCookie, setCookie} from "./other/cookie-tools"
 import { Button } from "./components/ui/button";
 
 import {
@@ -119,9 +121,14 @@ const difficulties = [
 
 const sortedcategories = categories.sort(); // Sorts the array alphabetically
 
-export default function SettingsPanel() {
+export default function SettingsPanel(props: {
+   speed;
+   setSpeed;
+}) {
    const [startDate, setStartDate] = React.useState<Date>();
    const [endDate, setEndDate] = React.useState<Date>();
+   const speed = props.speed
+   const setSpeed = props.setSpeed
 
    return (
       <>
@@ -202,8 +209,10 @@ export default function SettingsPanel() {
             <DateRangePicker id="date_range_picker"/>
          </span>
          <span className="flex flex-col gap-4 my-1 justify-start text-left">
-               <Label htmlFor="speed">Speed:</Label>
-               <Slider defaultValue={[0]} max={100} step={1} id="speed" />
+               <Label htmlFor="speed">Speed: {speed}</Label>
+               <Slider defaultValue={[speed]} max={100} step={1} id="speed" min={1} onValueChange={(value) => {
+                  setSpeed(value[0])
+               }}/>
             </span>
             <Separator className="w-full"/>
             <span className="flex items-center gap-2">

@@ -20,6 +20,7 @@ import {
    PlayIcon,
    PauseIcon,
    Info,
+   ArrowRight,
 } from "lucide-react";
 
 import {
@@ -46,14 +47,15 @@ import { toast } from "sonner";
 import React, { useState, useEffect, useRef } from "react";
 
 export default function TossupCard(props: {
-   text: string;
-   answer: string;
-   category: string;
+   text;
+   answer;
+   category;
+   speed;
 }) {
    const text = props.text;
    const answer = props.answer;
    const category = props.category;
-   const delay = 200;
+   const delay = 10000/props.speed;
 
    // Question Reader
    const [currentText, setCurrentText] = useState("");
@@ -64,7 +66,6 @@ export default function TossupCard(props: {
    const [inputShowing, setInputShowing] = useState(false);
    const [actionsShowing, setActionsShowing] = useState(false);
    const [inputValue, setInputValue] = useState("");
-   const [showAnswer, setShowAnswer] = useState(false);
 
    const readWord = () => {
       setCurrentText(words.slice(0, index.current + 1).join(" "));
@@ -79,6 +80,12 @@ export default function TossupCard(props: {
          if (timeoutId.current) clearTimeout(timeoutId.current);
       };
    }, [isReading, index.current]);
+
+   useEffect(() => {
+      if (index.current == words.length) {
+         setIsReading(false);
+      }
+   }, [index.current]);
 
    const toggleReading = () => {
       if (isReading) {
@@ -132,7 +139,14 @@ export default function TossupCard(props: {
             <p className="mb-4">
                <div className="prose">{currentText}</div>
             </p>
-            <div className="flex flex-row items-center justify-between">
+            <div
+               className={
+                  "flex flex-row items-center justify-between " +
+                  ((index.current != words.length && inputValue) == ""
+                     ? "hidden"
+                     : "block")
+               }
+            >
                <p>{answer}</p>
                <div className="flex gap-2">
                   <Button
@@ -226,12 +240,12 @@ export default function TossupCard(props: {
                      (actionsShowing ? "block" : "hidden")
                   }
                   onClick={() => {
-                     if (isReading && !inputShowing) {
+                     if (!inputShowing) {
                         toggleReading();
                         setInputShowing(!inputShowing);
                      } else if (inputShowing) {
-                        if (fuzz.ratio(answer, inputValue) > 30){
-                           setCookie("score", "10")
+                        if (fuzz.ratio(answer, inputValue) > 30) {
+                           setCookie("score", "10");
                         }
                         setInputShowing(!inputShowing);
                         console.log(fuzz.ratio(answer, inputValue));
@@ -247,8 +261,8 @@ export default function TossupCard(props: {
                      "justify-items-end " +
                      (actionsShowing ? "block" : "hidden")
                   }
-               >
-                  Next
+               > 
+                  Skip
                </Button>
                <Button
                   variant="secondary"

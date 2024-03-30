@@ -17,6 +17,7 @@ import { setCookie } from "./other/cookie-tools";
 export default function App() {
    useEffect(() => {
       setCookie("score", "0");
+      setCookie("speed", "50")
    });
 
    return (
