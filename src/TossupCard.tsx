@@ -51,11 +51,15 @@ export default function TossupCard(props: {
    answer;
    category;
    speed;
+   score;
+   setScore;
 }) {
    const text = props.text;
    const answer = props.answer;
    const category = props.category;
    const delay = 10000/props.speed;
+   let score = props.score;
+   const setScore = props.setScore;
 
    // Question Reader
    const [currentText, setCurrentText] = useState("");
@@ -245,7 +249,7 @@ export default function TossupCard(props: {
                         setInputShowing(!inputShowing);
                      } else if (inputShowing) {
                         if (fuzz.ratio(answer, inputValue) > 30) {
-                           setCookie("score", "10");
+                           score = setScore(10)
                         }
                         setInputShowing(!inputShowing);
                         console.log(fuzz.ratio(answer, inputValue));

@@ -3,17 +3,9 @@ import {setCookie, getCookie, deleteCookie} from "./other/cookie-tools"
 import React, {useState,  useEffect} from "react"
 
 
-export default function StatsPanel() {
-    const [score, setScore] = useState(getCookie("score"));
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setScore(getCookie("score"));
-        }, 10); // Check every second
-
-        // Cleanup on unmount
-        return () => clearInterval(interval);
-    }, []);
+export default function StatsPanel(props: {score, setScore}) {
+    const score = props.score;
+    const setScore = props.setScore;
 
     return (
         <div className="text-left rounded-md border-2 p-4">

@@ -19,9 +19,9 @@ import { Button } from "@/components/ui/button";
 
 import EnterActions from "../EnterActions";
 
-import {getCookie} from "../other/cookie-tools"
+import {getCookie, setCookie} from "../other/cookie-tools"
 
-import {useState} from "react"
+import {useState, useEffect} from "react"
 
 import SettingsPanel from "../SettingsPanel";
 import StatsPanel from "../StatsPanel";
@@ -29,13 +29,22 @@ import StatsPanel from "../StatsPanel";
 export default function Tossups() {
 
   const [speed, setSpeed] = useState(getCookie("speed"))
+  const [score, setScore] = useState(getCookie("score"))
+
+  useEffect(() => {
+    setCookie("score", score)
+  }, [score])
+
+  useEffect(() => {
+    setCookie("speed", speed)
+  }, [speed])
 
    return (
       <>
          <Navbar />
          <div className="mt-4 flex flex-row">
             <div className="flex flex-col p-2r gap-2">
-               <StatsPanel />
+               <StatsPanel score={score} setScore={setScore}/>
                <SettingsPanel speed={speed} setSpeed={setSpeed}/>
             </div>
             <div className="px-2 w-full">
@@ -45,6 +54,8 @@ export default function Tossups() {
                      answer="ANSWER: Commonwealth of Puerto Rico [accept Boriken]"
                      category="Geography"
                      speed={speed}
+                     score={score}
+                     setScore={setScore}
                   />
                </div>
             </div>
