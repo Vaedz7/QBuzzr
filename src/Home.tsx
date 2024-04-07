@@ -16,6 +16,8 @@ import {
    AccordionTrigger,
 } from "@/components/ui/accordion";
 
+import { Button } from "@/components/ui/button";
+
 import { setCookie, getCookie, deleteCookie } from "./other/cookie-tools";
 
 import { Typewriter } from "react-simple-typewriter";
@@ -49,87 +51,87 @@ export default function Home() {
                      &nbsp;QuizBowl.
                   </h1>
                </div>
-               <div className="text-left w-full">
-                  <h1 className="w-100 font-bold text-3xl my-4">
+               <div className="text-left w-full flex flex-col items-start">
+                  <h1 className="w-100 font-bold text-3xl mt-4 mb-2">
                      What are we?
                   </h1>
                   <h1 className="text-left text-2xl">
-                     QBuzzr is an all-in-one QuizBowl practice tool for people
-                     of all skill level. We aim to deliver the best practice
-                     experience by providing you the most hi tech and innovative
-                     features. We hope that our efforts will make your study
-                     process more productive and enjoyable.
+                     QBuzzr is built for people of all skill level. Whether you are a beginner or an experienced player, you can always elevate your QuizBowl practice with our innovative hi-tech tools that make your games both fun and productive.
                   </h1>
+
+                  <Button variant="default" className="bg-primary mt-4">
+                     <a href="/tossups">Play Now</a>
+                  </Button>
                </div>
             </div>
-         <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-4 my-16 relative">
-            <Card>
-               <CardHeader>
-                  <CardTitle>Truly Powerful</CardTitle>
-               </CardHeader>
-               <CardContent className="text-left">
-                  <p>
-                     Quizbowl practice just got awesome! This app uploads
-                     packets, reads questions aloud, and has an AI bot for
-                     competitive practice. No more heavy binders - it's all here
-                     and it's amazingly great. I think it deffinitelly deserves
-                     giving it 5 stars!
-                  </p>
-               </CardContent>
-               <CardFooter>
-                  <p>Manish Elluru</p>
-               </CardFooter>
-            </Card>
+            <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-4 my-16 relative">
+               <Card>
+                  <CardHeader>
+                     <CardTitle>Truly Powerful</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-left">
+                     <p>
+                        Quizbowl practice just got awesome! This app uploads
+                        packets, reads questions aloud, and has an AI bot for
+                        competitive practice. No more heavy binders - it's all
+                        here and it's amazingly great. I think it deffinitelly
+                        deserves giving it 5 stars!
+                     </p>
+                  </CardContent>
+                  <CardFooter>
+                     <p>Manish Elluru</p>
+                  </CardFooter>
+               </Card>
 
-            <Card>
-               <CardHeader>
-                  <CardTitle>Amazing</CardTitle>
-               </CardHeader>
-               <CardContent className="text-left">
-                  <p>
-                     New to quizbowl and drowning in facts? This app saves the
-                     day! It highlights key points in questions and offers a
-                     giant question bank. Plus, the bonus round is a fun way to
-                     test my knowledge on the go. Thanks for making me quizbowl
-                     ready!
-                  </p>
-               </CardContent>
-               <CardFooter>
-                  <p>Ghandi Nathan</p>
-               </CardFooter>
-            </Card>
+               <Card>
+                  <CardHeader>
+                     <CardTitle>Amazing</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-left">
+                     <p>
+                        New to quizbowl and drowning in facts? This app saves
+                        the day! It highlights key points in questions and
+                        offers a giant question bank. Plus, the bonus round is a
+                        fun way to test my knowledge on the go. Thanks for
+                        making me quizbowl ready!
+                     </p>
+                  </CardContent>
+                  <CardFooter>
+                     <p>Ghandi Nathan</p>
+                  </CardFooter>
+               </Card>
 
-            <Card>
-               <CardHeader>
-                  <CardTitle>Love It</CardTitle>
-               </CardHeader>
-               <CardContent className="text-left">
-                  <p>
-                     Coaching quizbowl just got easier. Upload packets, use
-                     text-to-speech for study sessions, and the AI bot is a
-                     dream! We can customize difficulty for each player, making
-                     practice sessions super efficient. This app is a
-                     game-changer for our team!
-                  </p>
-               </CardContent>
-               <CardFooter>
-                  <p>Shriyan Johny</p>
-               </CardFooter>
-            </Card>
-            <div
-            className="rounded-md size-full"
-               style={{
-                  height: "300px",
-                  background:
-                     "linear-gradient(197.37deg, #7450DB -0.38%, rgba(138, 234, 240, 0) 101.89%), linear-gradient(115.93deg, #3E88F6 4.86%, rgba(62, 180, 246, 0.33) 38.05%, rgba(62, 235, 246, 0) 74.14%), radial-gradient(56.47% 76.87% at 6.92% 7.55%, rgba(62, 136, 246, 0.7) 0%, rgba(62, 158, 246, 0.182) 52.16%, rgba(62, 246, 246, 0) 100%), linear-gradient(306.53deg, #2EE4E3 19.83%, rgba(46, 228, 227, 0) 97.33%)",
-                  backgroundBlendMode:
-                     "multiply, overlay, saturation, color-dodge, lighten, luminosity",
-                  filter: "blur(40px)",
-                  position: "absolute",
-                  zIndex: "-1",
-               }}
-            ></div>
-         </div>
+               <Card>
+                  <CardHeader>
+                     <CardTitle>Love It</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-left">
+                     <p>
+                        Coaching quizbowl just got easier. Upload packets, use
+                        text-to-speech for study sessions, and the AI bot is a
+                        dream! We can customize difficulty for each player,
+                        making practice sessions super efficient. This app is a
+                        game-changer for our team!
+                     </p>
+                  </CardContent>
+                  <CardFooter>
+                     <p>Shriyan Johny</p>
+                  </CardFooter>
+               </Card>
+               <div
+                  className="rounded-md size-full"
+                  style={{
+                     height: "300px",
+                     background:
+                        "linear-gradient(197.37deg, #7450DB -0.38%, rgba(138, 234, 240, 0) 101.89%), linear-gradient(115.93deg, #3E88F6 4.86%, rgba(62, 180, 246, 0.33) 38.05%, rgba(62, 235, 246, 0) 74.14%), radial-gradient(56.47% 76.87% at 6.92% 7.55%, rgba(62, 136, 246, 0.7) 0%, rgba(62, 158, 246, 0.182) 52.16%, rgba(62, 246, 246, 0) 100%), linear-gradient(306.53deg, #2EE4E3 19.83%, rgba(46, 228, 227, 0) 97.33%)",
+                     backgroundBlendMode:
+                        "multiply, overlay, saturation, color-dodge, lighten, luminosity",
+                     filter: "blur(40px)",
+                     position: "absolute",
+                     zIndex: "-1",
+                  }}
+               ></div>
+            </div>
          </div>
          <h1 className="text-2xl">Upcoming Features</h1>
          <Accordion type="single" collapsible>
