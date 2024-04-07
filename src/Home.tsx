@@ -25,41 +25,44 @@ export default function Home() {
    return (
       <>
          <Navbar />
-         <div className="flex flex-col items-center my-10 gap-4">
-            <div className="flex flex-row">
-               <h1 className="text-5xl italic font-medium p-2 text-left w-full">
-                  All-in-one tool for&nbsp;
-                  <span className="text-5xl italic font-medium p-2 text-left w-full text-primary">
-                     <Typewriter
-                        words={[
-                           "grinding",
-                           "learning",
-                           "studying",
-                           "drilling",
-                           "mastering",
-                           "training",
-                           "understanding",
-                           "discovering",
-                           "practicing",
-                        ]}
-                        loop={false}
-                     />
-                  </span>
-                  &nbsp;QuizBowl.
-               </h1>
+         <div>
+            <div className="flex flex-col items-center my-10 gap-4">
+               <div className="flex flex-row">
+                  <h1 className="text-5xl italic font-medium p-2 text-left w-full">
+                     All-in-one tool for&nbsp;
+                     <span className="text-5xl italic font-medium p-2 text-left w-full text-primary">
+                        <Typewriter
+                           words={[
+                              "grinding",
+                              "learning",
+                              "studying",
+                              "drilling",
+                              "mastering",
+                              "training",
+                              "understanding",
+                              "discovering",
+                              "practicing",
+                           ]}
+                           loop={false}
+                        />
+                     </span>
+                     &nbsp;QuizBowl.
+                  </h1>
+               </div>
+               <div className="text-left w-full">
+                  <h1 className="w-100 font-bold text-3xl my-4">
+                     What are we?
+                  </h1>
+                  <h1 className="text-left text-2xl">
+                     QBuzzr is an all-in-one QuizBowl practice tool for people
+                     of all skill level. We aim to deliver the best practice
+                     experience by providing you the most hi tech and innovative
+                     features. We hope that our efforts will make your study
+                     process more productive and enjoyable.
+                  </h1>
+               </div>
             </div>
-            <div className="text-left w-full">
-               <h1 className="w-100 font-bold text-3xl my-4">What are we?</h1>
-               <h1 className="text-left text-2xl">
-                  QBuzzr is an all-in-one QuizBowl practice tool for people of
-                  all skill level. We aim to deliver the best practice
-                  experience by providing you the most hi tech and innovative
-                  features. We hope that our efforts will make your study
-                  process more productive and enjoyable.
-               </h1>
-            </div>
-         </div>
-         <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-4 mt-8">
+         <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-4 my-16 relative">
             <Card>
                <CardHeader>
                   <CardTitle>Truly Powerful</CardTitle>
@@ -113,8 +116,22 @@ export default function Home() {
                   <p>Shriyan Johny</p>
                </CardFooter>
             </Card>
+            <div
+            className="rounded-md size-full"
+               style={{
+                  height: "300px",
+                  background:
+                     "linear-gradient(197.37deg, #7450DB -0.38%, rgba(138, 234, 240, 0) 101.89%), linear-gradient(115.93deg, #3E88F6 4.86%, rgba(62, 180, 246, 0.33) 38.05%, rgba(62, 235, 246, 0) 74.14%), radial-gradient(56.47% 76.87% at 6.92% 7.55%, rgba(62, 136, 246, 0.7) 0%, rgba(62, 158, 246, 0.182) 52.16%, rgba(62, 246, 246, 0) 100%), linear-gradient(306.53deg, #2EE4E3 19.83%, rgba(46, 228, 227, 0) 97.33%)",
+                  backgroundBlendMode:
+                     "multiply, overlay, saturation, color-dodge, lighten, luminosity",
+                  filter: "blur(40px)",
+                  position: "absolute",
+                  zIndex: "-1",
+               }}
+            ></div>
          </div>
-         <h1 className="text-2xl mt-8">Upcoming Features</h1>
+         </div>
+         <h1 className="text-2xl">Upcoming Features</h1>
          <Accordion type="single" collapsible>
             {/* Content Management */}
             <AccordionItem value="item-1">
