@@ -30,6 +30,12 @@ export default function Tossups() {
 
   const [speed, setSpeed] = useState(getCookie("speed"))
   const [score, setScore] = useState(getCookie("score"))
+  const [text, setText] = useState("")
+  const [answer, setAnswer] = useState("")
+  const [category, setCategory] = useState("")
+  const [set, setSet] = useState("")
+  const [packet, setPacket] = useState("")
+  const [questionNumber, setQuestionNumber] = useState("")
 
   useEffect(() => {
     setCookie("score", score)
@@ -38,6 +44,21 @@ export default function Tossups() {
   useEffect(() => {
     setCookie("speed", speed)
   }, [speed])
+
+  useEffect(() => {
+    fetch('https://qbreader.org/api/random-tossup')
+      .then(response => response.json())
+      .then(data => {
+        setText(data.tossups[0].question);
+        setAnswer(data.tossups[0].formatted_answer);
+        setCategory(data.tossups[0].category);
+        setPacket(data.tossups[0].packet.name);
+        setQuestionNumber(data.tossups[0].number);
+        setSet(data.tossups[0].set.name)
+      })
+      .catch(error => console.error('Error:', error));
+  }, []);
+  
 
    return (
       <>
@@ -50,9 +71,12 @@ export default function Tossups() {
             <div className="px-2 w-full">
                <div className="flex flex-col items-center">
                   <TossupCard
-                     text="It's not Brazil, but this region's Luquillo Mountains are home to a namesake Amazon parrot. A mix of islands and cays including Culebra and Vieques are located off the eastern coast of this island. An endemic species of frog known as coqui are located in this island's El Yunque National Forest. This island's central region is home to (*) Arecibo Observatory, one of the world's largest radio telescopes. (#) The successive 2017 natural disasters of Hurricane Irma and Maria damaged much of the infrastructure on this island. For ten points name this island territory of the United States, with capital San Juan."
-                     answer="ANSWER: Commonwealth of Puerto Rico [accept Boriken]"
-                     category="Geography"
+                     text={text}
+                     answer={<span dangerouslySetInnerHTML={{ __html: "ANSWER: " + answer }}/>}
+                     category={category}
+                     set={set}
+                     packet={packet}
+                     questionNumber={questionNumber}
                      speed={speed}
                      score={score}
                      setScore={setScore}

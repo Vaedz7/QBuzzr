@@ -50,6 +50,9 @@ export default function TossupCard(props: {
    text;
    answer;
    category;
+   set;
+   packet;
+   questionNumber;
    speed;
    score;
    setScore;
@@ -57,6 +60,9 @@ export default function TossupCard(props: {
    const text = props.text;
    const answer = props.answer;
    const category = props.category;
+   const set = props.set;
+   const packet = props.packet;
+   const questionNumber = props.questionNumber;
    const delay = 10000/props.speed;
    let score = props.score;
    const setScore = props.setScore;
@@ -70,6 +76,7 @@ export default function TossupCard(props: {
    const [inputShowing, setInputShowing] = useState(false);
    const [actionsShowing, setActionsShowing] = useState(false);
    const [inputValue, setInputValue] = useState("");
+   const [hasBuzzed, setHasBuzzed] = useState(false);
 
    const readWord = () => {
       setCurrentText(words.slice(0, index.current + 1).join(" "));
@@ -135,8 +142,8 @@ export default function TossupCard(props: {
                   </HoverCardTrigger>
                   <HoverCardContent>
                      {/* Set Info Goes Here/Need to add an appropriate variable later */}
-                     <h1 className="font-bold">2020 RAFT</h1>
-                     <h1>Packet 8 | Question 4</h1>
+                     <h1 className="font-bold">{set}</h1>
+                     <h1>{packet} | Question {questionNumber}</h1>
                   </HoverCardContent>
                </HoverCard>
             </div>
@@ -146,7 +153,7 @@ export default function TossupCard(props: {
             <div
                className={
                   "flex flex-row items-center justify-between " +
-                  ((index.current != words.length && inputValue) == ""
+                  ((!hasBuzzed)
                      ? "hidden"
                      : "block")
                }
@@ -244,16 +251,17 @@ export default function TossupCard(props: {
                      (actionsShowing ? "block" : "hidden")
                   }
                   onClick={() => {
-                     if (!inputShowing) {
+                     if (!inputShowing && (hasBuzzed == false)) {
                         toggleReading();
                         setInputShowing(!inputShowing);
                      } else if (inputShowing) {
+                        setHasBuzzed(true)
                         if (fuzz.ratio(answer, inputValue) > 30) {
                            score = setScore(10)
                         }
                         setInputShowing(!inputShowing);
+                        setCurrentText(words.join(" ")) 
                         console.log(fuzz.ratio(answer, inputValue));
-                        toggleReading();
                      }
                   }}
                >

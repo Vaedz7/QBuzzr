@@ -31,9 +31,9 @@ export default function Home() {
             <div className="flex flex-col items-start my-10 gap-4">
                <div className="flex flex-row">
                   <h1 className="text-5xl italic font-medium p-2 text-left w-full">
-                     All-in-one tool for&nbsp;
+                     All-in-one tool for{/*&nbsp;*/}
                      <span className="text-5xl italic font-medium p-2 text-left w-full text-primary">
-                        <Typewriter
+                        {/* <Typewriter
                            words={[
                               "grinding",
                               "learning",
@@ -46,9 +46,10 @@ export default function Home() {
                               "practicing",
                            ]}
                            loop={false}
-                        />
+                        /> */}
+                        mastering
                      </span>
-                     &nbsp;QuizBowl.
+                     {/*&nbsp;*/}QuizBowl.
                   </h1>
                </div>
                <div className="text-left w-full flex flex-col items-start">
