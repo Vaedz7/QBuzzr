@@ -28,7 +28,7 @@ export default function Home() {
       <>
          <Navbar />
          <div>
-            <div className="flex flex-col items-center my-10 gap-4">
+            <div className="flex flex-col items-start my-10 gap-4">
                <div className="flex flex-row">
                   <h1 className="text-5xl italic font-medium p-2 text-left w-full">
                      All-in-one tool for&nbsp;
@@ -52,9 +52,9 @@ export default function Home() {
                   </h1>
                </div>
                <div className="text-left w-full flex flex-col items-start">
-                  <h1 className="w-100 font-bold text-3xl mt-4 mb-2">
+                  {/* <h1 className="w-100 font-bold text-3xl mt-4 mb-2">
                      What are we?
-                  </h1>
+                  </h1> */}
                   <h1 className="text-left text-2xl">
                      QBuzzr is built for people of all skill level. Whether you are a beginner or an experienced player, you can always elevate your QuizBowl practice with our innovative hi-tech tools that make your games both fun and productive.
                   </h1>
@@ -64,7 +64,7 @@ export default function Home() {
                   </Button>
                </div>
             </div>
-            <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-4 my-16 relative">
+            <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-4 my-16 w-full h-full relative">
                <Card>
                   <CardHeader>
                      <CardTitle>Truly Powerful</CardTitle>
@@ -121,7 +121,6 @@ export default function Home() {
                <div
                   className="rounded-md size-full"
                   style={{
-                     height: "300px",
                      background:
                         "linear-gradient(197.37deg, #7450DB -0.38%, rgba(138, 234, 240, 0) 101.89%), linear-gradient(115.93deg, #3E88F6 4.86%, rgba(62, 180, 246, 0.33) 38.05%, rgba(62, 235, 246, 0) 74.14%), radial-gradient(56.47% 76.87% at 6.92% 7.55%, rgba(62, 136, 246, 0.7) 0%, rgba(62, 158, 246, 0.182) 52.16%, rgba(62, 246, 246, 0) 100%), linear-gradient(306.53deg, #2EE4E3 19.83%, rgba(46, 228, 227, 0) 97.33%)",
                      backgroundBlendMode:
