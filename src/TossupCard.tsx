@@ -135,7 +135,7 @@ export default function TossupCard(props: {
 
    return (
       <>
-         <div className={"text-left p-4 rounded-md border-2 w-full " + (index.current == 0 ? "hidden" : "block")}>
+         <div className={"text-left p-4 mb-2 rounded-md border-2 w-full " + (index.current == 0 ? "hidden" : "block")}>
             <div className="flex justify-between border-b-2 pb-2 mb-4">
                <h1 className="font-bold">{category}</h1>
                <HoverCard>
@@ -237,7 +237,7 @@ export default function TossupCard(props: {
          </div>
          <div
             className={
-               "flex flex-row w-full mt-2 gap-2 sticky bottom-0 " +
+               "flex flex-row w-full gap-2 sticky bottom-0 rounded-md p-2 border-2 " +
                (inputShowing ? "justify-evenly" : "justify-end")
             }
          >
