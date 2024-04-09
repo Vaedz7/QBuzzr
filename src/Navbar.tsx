@@ -47,8 +47,44 @@ export default function Home() {
       <>
          <NavigationMenu>
             <a href="/">
+               {/* <svg
+                  className="h-8 mr-4 block sm:hidden"
+                  strokeMiterlimit={10}
+                  style={{
+                     fillRule: "nonzero",
+                     clipRule: "evenodd",
+                     strokeLinecap: "round",
+                     strokeLinejoin: "round",
+                  }}
+                  viewBox="0 0 1024 1024"
+                  width="100%"
+                  xmlSpace="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+               >
+                  <defs />
+                  <clipPath id="ArtboardFrame">
+                     <rect height={1024} width={1024} x={0} y={0} />
+                  </clipPath>
+                  <g clipPath="url(#ArtboardFrame)" id="Layer-1">
+                     <path
+                        d="M679.403 874.779C620.624 898.218 555.94 911.193 488.036 911.193C218.681 911.193 0 707.047 0 455.596C0 204.146 218.681 0 488.036 0C757.39 0 976.072 204.146 976.072 455.596C976.072 568.095 932.299 671.125 859.808 750.631L689.782 583.711C716.456 547.195 732.054 503.083 732.054 455.596C732.054 329.871 622.713 227.798 488.036 227.798C353.36 227.798 244.018 329.871 244.018 455.596C244.018 580.202 351.421 681.575 484.431 683.369L679.403 874.779Z"
+                        fill="#ffffff"
+                        fillRule="evenodd"
+                        opacity={1}
+                        stroke="none"
+                     />
+                     <path
+                        d="M603.183 536.084C593.081 526.167 579.38 520.595 565.094 520.595L486.766 520.595C464.979 520.595 445.338 533.48 437 553.241C428.663 573.002 433.271 595.747 448.677 610.871L852.972 1007.78C862.95 1017.58 876.445 1023.14 890.555 1023.27L969.626 1024C991.504 1024.2 1011.33 1011.39 1019.8 991.584C1028.27 971.778 1023.69 948.912 1008.22 933.725L603.183 536.084Z"
+                        fill="#ffffff"
+                        fillRule="evenodd"
+                        opacity={1}
+                        stroke="none"
+                     />
+                  </g>
+               </svg> */}
                <svg
-                  className="w-32 mr-4"
+                  className="h-8 mr-4"
                   viewBox="0 0 5292 1242"
                   xmlns="http://www.w3.org/2000/svg"
                   xmlSpace="preserve"
@@ -163,7 +199,7 @@ export default function Home() {
                      <SignInButton />
                   </SignedOut>
                   <SignedIn>
-                     <UserButton/>
+                     <UserButton />
                   </SignedIn>
                </NavigationMenuItem>
 
