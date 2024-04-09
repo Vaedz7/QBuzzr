@@ -29,11 +29,10 @@ export default function Home() {
          <Navbar />
          <div>
             <div className="flex flex-col items-start my-10 gap-4">
-               <div className="flex flex-row">
-                  <h1 className="text-5xl italic font-medium p-2 text-left w-full">
-                     All-in-one tool for{/*&nbsp;*/}
-                     <span className="text-5xl italic font-medium p-2 text-left w-full text-primary">
-                        {/* <Typewriter
+               <h1 className="text-5xl italic font-medium p-2 text-left">
+                  All-in-one tool for
+                  <span className="inline-block text-5xl italic font-medium p-2 text-left text-primary">
+                     {/* <Typewriter
                            words={[
                               "grinding",
                               "learning",
@@ -47,17 +46,19 @@ export default function Home() {
                            ]}
                            loop={false}
                         /> */}
-                        mastering
-                     </span>
-                     {/*&nbsp;*/}QuizBowl.
-                  </h1>
-               </div>
+                     mastering
+                  </span>
+                  QuizBowl.
+               </h1>
                <div className="text-left w-full flex flex-col items-start">
                   {/* <h1 className="w-100 font-bold text-3xl mt-4 mb-2">
                      What are we?
                   </h1> */}
                   <h1 className="text-left text-2xl">
-                     QBuzzr is built for people of all skill level. Whether you are a beginner or an experienced player, you can always elevate your QuizBowl practice with our innovative hi-tech tools that make your games both fun and productive.
+                     QBuzzr is built for people of all skill level. Whether you
+                     are a beginner or an experienced player, you can always
+                     elevate your QuizBowl practice with our innovative hi-tech
+                     tools that make your games both fun and productive.
                   </h1>
 
                   <Button variant="default" className="bg-primary mt-4">

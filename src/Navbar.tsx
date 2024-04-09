@@ -47,7 +47,7 @@ export default function Home() {
       <>
          <NavigationMenu>
             <a href="/">
-               {/* <svg
+               <svg
                   className="h-8 mr-4 block sm:hidden"
                   strokeMiterlimit={10}
                   style={{
@@ -82,9 +82,9 @@ export default function Home() {
                         stroke="none"
                      />
                   </g>
-               </svg> */}
+               </svg>
                <svg
-                  className="h-8 mr-4"
+                  className="h-8 mr-4 hidden sm:block"
                   viewBox="0 0 5292 1242"
                   xmlns="http://www.w3.org/2000/svg"
                   xmlSpace="preserve"
