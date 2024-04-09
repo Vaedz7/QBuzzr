@@ -20,7 +20,7 @@ import {
    PlayIcon,
    PauseIcon,
    Info,
-   ArrowRight,
+   RotateCcw,
 } from "lucide-react";
 
 import {
@@ -41,6 +41,8 @@ import {
    DropdownMenuSubTrigger,
    DropdownMenuPortal,
 } from "@/components/ui/dropdown-menu";
+
+import { Separator } from "@/components/ui/separator"
 
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
@@ -63,7 +65,7 @@ export default function TossupCard(props: {
    const set = props.set;
    const packet = props.packet;
    const questionNumber = props.questionNumber;
-   const delay = 10000/props.speed;
+   const delay = 10000 / props.speed;
    let score = props.score;
    const setScore = props.setScore;
 
@@ -133,7 +135,7 @@ export default function TossupCard(props: {
 
    return (
       <>
-         <div className="text-left p-4 rounded-md border-2 w-full">
+         <div className={"text-left p-4 rounded-md border-2 w-full " + (index.current == 0 ? "hidden" : "block")}>
             <div className="flex justify-between border-b-2 pb-2 mb-4">
                <h1 className="font-bold">{category}</h1>
                <HoverCard>
@@ -143,7 +145,9 @@ export default function TossupCard(props: {
                   <HoverCardContent>
                      {/* Set Info Goes Here/Need to add an appropriate variable later */}
                      <h1 className="font-bold">{set}</h1>
-                     <h1>{packet} | Question {questionNumber}</h1>
+                     <h1>
+                        {packet} | Question {questionNumber}
+                     </h1>
                   </HoverCardContent>
                </HoverCard>
             </div>
@@ -153,9 +157,7 @@ export default function TossupCard(props: {
             <div
                className={
                   "flex flex-row items-center justify-between " +
-                  ((!hasBuzzed)
-                     ? "hidden"
-                     : "block")
+                  (!hasBuzzed ? "hidden" : "block")
                }
             >
                <p>{answer}</p>
@@ -248,19 +250,19 @@ export default function TossupCard(props: {
                <Button
                   className={
                      "justify-items-end " +
-                     (actionsShowing ? "block" : "hidden")
+                     (actionsShowing && !hasBuzzed ? "block" : "hidden")
                   }
                   onClick={() => {
-                     if (!inputShowing && (hasBuzzed == false)) {
+                     if (!inputShowing && hasBuzzed == false) {
                         toggleReading();
                         setInputShowing(!inputShowing);
                      } else if (inputShowing) {
-                        setHasBuzzed(true)
+                        setHasBuzzed(true);
                         if (fuzz.ratio(answer, inputValue) > 30) {
-                           score = setScore(10)
+                           score = setScore(10);
                         }
                         setInputShowing(!inputShowing);
-                        setCurrentText(words.join(" ")) 
+                        setCurrentText(words.join(" "));
                         console.log(fuzz.ratio(answer, inputValue));
                      }
                   }}
@@ -273,11 +275,12 @@ export default function TossupCard(props: {
                      "justify-items-end " +
                      (actionsShowing ? "block" : "hidden")
                   }
-               > 
-                  Skip
+               >
+                  {hasBuzzed ? "Next" : "Skip"}
                </Button>
                <Button
                   variant="secondary"
+                  disabled={(inputShowing || hasBuzzed) ? true : false}
                   size="icon"
                   onClick={() => {
                      toggleReading();
@@ -293,6 +296,9 @@ export default function TossupCard(props: {
                      <PlayIcon className="h-4 w-4" />
                   )}
                </Button>
+               {/* <Button variant="secondary" size="icon">
+                  <RotateCcw className="h-4 w-4"/>
+               </Button> */}
             </div>
          </div>
       </>
