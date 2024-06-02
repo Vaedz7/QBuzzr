@@ -49,7 +49,7 @@ export default function Tossups() {
     fetch('https://api.qbuzzr.buzz/random_tossup', {
        headers: new Headers({
         'x-api-key': process.env.REACT_APP_KEY, 
-    })});
+    })})
       .then(response => response.json())
       .then(data => {
         setText(data.tossups[0].question);
