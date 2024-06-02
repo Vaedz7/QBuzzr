@@ -46,7 +46,10 @@ export default function Tossups() {
   }, [speed])
 
   useEffect(() => {
-    fetch('https://qbreader.org/api/random-tossup')
+    fetch('https://api.qbuzzr.buzz/random_tossup', {
+       headers: new Headers({
+        'x-api-key': process.env.REACT_APP_KEY, 
+    })});
       .then(response => response.json())
       .then(data => {
         setText(data.tossups[0].question);
