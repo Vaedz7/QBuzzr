@@ -225,12 +225,6 @@ export default function Home() {
                      </DropdownMenuContent>
                   </DropdownMenu>
                </NavigationMenuItem>
-
-               <NavigationMenuItem>
-                  <h1 className="ml-2">
-                     🚨 Public release coming May 2024. 🚨
-                  </h1>
-               </NavigationMenuItem>
             </NavigationMenuList>
          </NavigationMenu>
       </>
